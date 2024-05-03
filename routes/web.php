@@ -35,6 +35,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/todo/{todo}/complete', [TodoController::class, 'complete'])->name('todo.complete');
     Route::patch('/todo/{todo}/incomplete', [TodoController::class, 'uncomplete'])->name('todo.uncompete');
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
+
+    Route::patch('/user/{user}/makeadmin', [UserController::class, 'makeadmin'])->name('user.makeadmin');
+    Route::patch('/user/{user}/removeadmin', [UserController::class, 'removeadmin'])->name('user.removeadmin');
 });
 
 require __DIR__.'/auth.php';
