@@ -26,5 +26,7 @@ class DatabaseSeeder extends Seeder
                 'is_admin' => true
             ]
         );
+        User::factory(100)->create();
+        Todo::factory(500)->create();
     }
 }
