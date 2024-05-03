@@ -31,6 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/todo', [TodoController::class, 'store'])->name('todo.store');
     Route::get('/todo', [TodoController::class, 'index'])->name('todo.index');
     Route::get('/todo/create', [TodoController::class, 'create'])->name('todo.create');
+    Route::get('/todo/{todo}/edit', [TodoController::class, 'edit'])->name('todo.edit');
+    Route::patch('/todo/{todo}', [TodoController::class, 'update'])->name('todo.update');
     Route::get('/todo/edit', [TodoController::class, 'edit'])->name('todo.edit');
     Route::patch('/todo/{todo}/complete', [TodoController::class, 'complete'])->name('todo.complete');
     Route::patch('/todo/{todo}/incomplete', [TodoController::class, 'uncomplete'])->name('todo.uncompete');
