@@ -27,7 +27,7 @@ class UserController extends Controller
 
             ->paginate(10);
         }
-        return view('user.index');
+        return view('user.index', compact('users'));
     }
 
     public function makeadmin(User $user){

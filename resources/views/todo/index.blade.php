@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Todo') }}
+            {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
@@ -79,12 +79,13 @@
                                         <form action="{{ route('todo.complete', $todo) }}" method="POST">
                                             @csrf
                                             @method('PATCH')
-                                            <button type="submit" class="text-green-600 dark:text-green-400">
+                                            <button type="submit"
+                                            class="text-green-600 dark:text-green-400">
                                                 Complete
                                             </button>
                                         </form>
                                         @else
-                                        <form action="{{ route('todo.uncompete', $todo) }}" method="POST">
+                                        <form action="{{ route('todo.uncomplete', $todo) }}" method="POST">
                                             @csrf
                                             @method('PATCH')
                                             <button type="submit" class="text-blue-600 dark:text-blue-400">
